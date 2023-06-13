@@ -12,6 +12,8 @@ In Theme menu implemented Dark and Light Mode
 
 Version 0.1.2
 
+https://github.com/NitinBhattacharyya/Scrapity_Text_Editor/releases/tag/v0.1.2
+
 Added Undo and Redo functionality in Edit menu and added key bindings for them as well
 Added functionality where if changes occur in the file,pressing X button or close option from Edit menu will 
 prompt a popup to save the file closing the Scrapity editor
