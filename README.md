@@ -9,6 +9,7 @@ In Edit menu implemented cut,copy,paste,selec all,font(size),close functionality
 In Theme menu implemented Dark and Light Mode
 
 Version 0.1.2
+
 Added Undo and Redo functionality in Edit menu and added key bindings for them as well
 Added functionality where if changes occur in the file,pressing X button will prompt a popup to save the file
 closing the Scrapity editor
