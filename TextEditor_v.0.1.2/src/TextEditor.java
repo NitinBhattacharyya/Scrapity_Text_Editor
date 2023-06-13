@@ -323,7 +323,92 @@ public class TextEditor extends Component implements ActionListener {
         }
         if(actionEvent.getSource()==close)
         {
-            System.exit(0);
+            String change=textArea.getText();
+            if(isSaved==false && !change.isEmpty())
+            {
+                if(isDark)
+                {
+                    UIManager UI=new UIManager();
+                    UI.put("OptionPane.background",Color.darkGray);
+                    UI.put("Panel.background",Color.darkGray);
+                    UI.put("OptionPane.messageForeground",Color.white);
+                    int option=JOptionPane.showConfirmDialog(null,"Your file is not saved,save?","Scrapity",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE);
+                    if(option==1)frame.dispose();
+                    if(option==2 || option==-1)frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                    if(option==0)
+                    {
+                        //Initialize a file picker
+                        JFileChooser fileChooser=new JFileChooser("C:");
+                        //Get choose option
+                        int chooseOption=fileChooser.showSaveDialog(null);
+                        //check if we clicked on save button
+                        if(chooseOption==JFileChooser.APPROVE_OPTION)
+                        {
+                            //Create a new file with choosen directory path and file name
+                            java.io.File file=new File(fileChooser.getSelectedFile().getAbsolutePath()+".txt");
+                            String fileName= file.getName();
+                            try{
+                                //Initialize file writer
+                                FileWriter fileWriter=new FileWriter(file);
+                                //Initialize Buffered writer
+                                BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
+                                //Write contents of textArea to file
+                                textArea.write(bufferedWriter);
+                                bufferedWriter.close();
+                            }
+                            catch(IOException ioException){
+                                ioException.printStackTrace();
+
+                            }
+                            frame.setTitle(fileName);
+                        }
+                        isSaved=true;
+                        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                    }
+                }
+                else {
+                    UIManager UI=new UIManager();
+                    UI.put("OptionPane.background",Color.white);
+                    UI.put("Panel.background",Color.white);
+                    int option=JOptionPane.showConfirmDialog(null,"Your file is not saved,save?","Scrapity",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE);
+                    if(option==1)frame.dispose();
+                    if(option==2 || option==-1)frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                    if(option==0)
+                    {
+                        //Initialize a file picker
+                        JFileChooser fileChooser=new JFileChooser("C:");
+                        //Get choose option
+                        int chooseOption=fileChooser.showSaveDialog(null);
+                        //check if we clicked on save button
+                        if(chooseOption==JFileChooser.APPROVE_OPTION)
+                        {
+                            //Create a new file with choosen directory path and file name
+                            java.io.File file=new File(fileChooser.getSelectedFile().getAbsolutePath()+".txt");
+                            String fileName= file.getName();
+                            try{
+                                //Initialize file writer
+                                FileWriter fileWriter=new FileWriter(file);
+                                //Initialize Buffered writer
+                                BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
+                                //Write contents of textArea to file
+                                textArea.write(bufferedWriter);
+                                bufferedWriter.close();
+                            }
+                            catch(IOException ioException){
+                                ioException.printStackTrace();
+
+                            }
+                            frame.setTitle(fileName);
+                        }
+                        isSaved=true;
+                        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                    }
+
+                }
+            }
+            else {
+                frame.dispose();
+            }
         }
         if(actionEvent.getSource()==dark)
         {
