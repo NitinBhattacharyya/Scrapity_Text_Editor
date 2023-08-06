@@ -30,10 +30,13 @@ prompt a popup to save the file closing the Scrapity editor
 
 <h1>Font Size Menu</h1>
 
-![Screenshot (47)](https://github.com/NitinBhattacharyya/Scrapity_Text_Editor/assets/42495409/92d3a540-0651-48f9-9e5c-2591e96e82de)
+![image](https://github.com/NitinBhattacharyya/Scrapity_Text_Editor/assets/42495409/46fa995e-9032-4548-87f1-1eb79ae41f28)
+
 
 <h1>Dark Mode</h1>
-![Screenshot (47)](https://github.com/NitinBhattacharyya/Scrapity_Text_Editor/assets/42495409/525baed2-839d-4304-8629-ed347b2bfc86)
+
+![image](https://github.com/NitinBhattacharyya/Scrapity_Text_Editor/assets/42495409/c918a0c3-1b1e-44ea-9bde-663c68fd99d5)
+
 
 
 
